@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+{% for prod in products %}
+
+    <div class="container-md p-3">
+    <a href="../product/{{prod.id}}" style="text-decoration: none;">
+    <div class="card" >
+        <div class="card-body" style="background: linear-gradient(#9A5044, #E8D9A9);">
+            <h2 class="card-title">{{prod.name}}</h2>
+            <h6 class="text-muted card-subtitle mb-2">{{prod.slug}}</h6>
+
+            <img class = "img p-4" style = "width: 25vw;" src="../{{ prod.image }}" alt="">
+            <h3 class="card-title">Price: {{prod.price}}$</h3>
+            <p class="card-text">{{prod.description}}</p>
+        </div>
+    </div>
+        </a>
+    </div>
+
+
+{% endfor %}
+{% endblock %}
+    
