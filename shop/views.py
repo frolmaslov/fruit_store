@@ -25,7 +25,6 @@ def product_category(request, name):
         return render(request, 'product_category.html', {'products': products})
 
 
-
 @login_required
 def product(request, id):
     product = Product.objects.get(id=id)
